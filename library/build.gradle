@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
+    namespace = "com.amulyakhare.textdrawable" // this should be your namespace from AndroidManifest.xml
     compileSdkVersion 21
     buildToolsVersion "21.1.1"
 
@@ -19,7 +20,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 sourceSets {
@@ -34,6 +35,6 @@ sourceSets {
 }
 
 task sourcesJar(type: Jar) {
-    classifier = 'sources'
+    archiveClassifier = 'sources'
     from sourceSets.main.java, sourceSets.main.resources
 }
